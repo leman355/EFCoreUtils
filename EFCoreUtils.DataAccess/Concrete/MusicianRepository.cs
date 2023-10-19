@@ -15,8 +15,10 @@ namespace EFCoreUtils.DataAccess.Concrete
 
         public async Task<List<Musician>> GetAllMusicians()
         {
+            //AsNoTracking
             return await _context.Musicians
                 .Include(m => m.MusicBand)
+                .AsNoTracking()
                 .ToListAsync();
         }
 
