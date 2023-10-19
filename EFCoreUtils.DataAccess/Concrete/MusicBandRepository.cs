@@ -15,8 +15,10 @@ namespace EFCoreUtils.DataAccess.Concrete
 
         public async Task<List<MusicBand>> GetAllMusicBands()
         {
+            //IgnoreQueryFilters
             return await _context.MusicBands
-                .Include(m=>m.Musicians)
+                .Include(m => m.Musicians)
+                .IgnoreQueryFilters()
                 .ToListAsync();
         }
 
