@@ -17,7 +17,7 @@ namespace EFCoreUtils.DataAccess.Concrete
         {
             //AsNoTracking
             return await _context.Musicians
-                .Include(m => m.MusicBand)
+                .Include(m => m.MusicBand) //Eager load
                 .AsNoTracking()
                 .ToListAsync();
         }

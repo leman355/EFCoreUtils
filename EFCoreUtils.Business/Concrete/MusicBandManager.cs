@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using EFCoreUtils.Business.Abstract;
 using EFCoreUtils.Business.DTO.MusicBandDtos;
-using EFCoreUtils.Business.DTO.MusicianDtos;
 using EFCoreUtils.DataAccess.Abstract;
 using EFCoreUtils.Entities;
 
