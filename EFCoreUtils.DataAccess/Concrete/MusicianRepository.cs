@@ -19,7 +19,7 @@ namespace EFCoreUtils.DataAccess.Concrete
             return await _context.Musicians
                 .Include(m => m.MusicBand) //Eager load
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync(); //Immediate Execution
         }
 
         public async Task<Musician> GetMusicianById(int musicianId)
