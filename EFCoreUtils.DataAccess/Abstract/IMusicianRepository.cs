@@ -10,5 +10,8 @@ namespace EFCoreUtils.DataAccess.Abstract
         Task<Musician> UpdateMusician(Musician musician);
         Task DeleteMusicianById(int musicianId);
         Task<List<Musician>> GetMusicBandByMusicianId(int musicianId);
+        //IQueryable
+        IQueryable<Musician> GetAllMusiciansQuery();
+        IQueryable<Musician> GetMusicBandByMusicianIdQuery(int musicianId);
     }
 }

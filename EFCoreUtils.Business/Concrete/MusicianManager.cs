@@ -55,5 +55,16 @@ namespace EFCoreUtils.Business.Concrete
             var musicians = await _musicianRepository.GetMusicBandByMusicianId(musicianId);
             return _mapper.Map<List<MusicianToListDto>>(musicians);
         }
+
+        //IQueryable
+        public IQueryable<MusicianToListDto> GetAllMusiciansQuery()
+        {
+            return _musicianRepository.GetAllMusiciansQuery().Select(m => _mapper.Map<MusicianToListDto>(m));
+        }
+
+        public IQueryable<MusicianToListDto> GetMusicBandByMusicianIdQuery(int musicianId)
+        {
+            return _musicianRepository.GetMusicBandByMusicianIdQuery(musicianId).Select(m => _mapper.Map<MusicianToListDto>(m));
+        }
     }
 }

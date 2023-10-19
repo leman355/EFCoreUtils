@@ -10,5 +10,8 @@ namespace EFCoreUtils.Business.Abstract
         Task<MusicianToUpdateDto> UpdateMusician(int musicianId, MusicianToUpdateDto musician);
         Task DeleteMusicianById(int musicianId);
         Task<List<MusicianToListDto>> GetMusicBandByMusicianId(int musicianId);
-   }
+        //IQueryable
+        IQueryable<MusicianToListDto> GetAllMusiciansQuery();
+        IQueryable<MusicianToListDto> GetMusicBandByMusicianIdQuery(int musicianId);
+    }
 }

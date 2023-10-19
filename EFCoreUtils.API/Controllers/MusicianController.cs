@@ -80,5 +80,24 @@ namespace EFCoreUtils.API.Controllers
             var musicBands = await _musicianService.GetMusicBandByMusicianId(musicianId);
             return Ok(musicBands);
         }
+
+        //IQueryable
+        [HttpGet("query")]
+        [SwaggerOperation(Summary = "Get all musicians using IQueryable")]
+        public IActionResult GetAllMusiciansQuery()
+        {
+            var musiciansQuery = _musicianService.GetAllMusiciansQuery();
+            var musicians = musiciansQuery.ToList();
+            return Ok(musicians);
+        }
+
+        [HttpGet("{musicianId}/musicbands/query")]
+        [SwaggerOperation(Summary = "Get music bands by musician ID using IQueryable")]
+        public IActionResult GetMusicBandByMusicianIdQuery(int musicianId)
+        {
+            var musicBandsQuery = _musicianService.GetMusicBandByMusicianIdQuery(musicianId);
+            var musicBands = musicBandsQuery.ToList();
+            return Ok(musicBands);
+        }
     }
 }

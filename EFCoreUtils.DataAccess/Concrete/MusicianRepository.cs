@@ -69,5 +69,15 @@ namespace EFCoreUtils.DataAccess.Concrete
                 .Where(m => m.MusicianId == musicianId)
                 .ToListAsync();
         }
+
+        //IQueryable
+        public IQueryable<Musician> GetAllMusiciansQuery()
+        {
+            return _context.Musicians.Include(m => m.MusicBand).AsNoTracking();
+        }
+        public IQueryable<Musician> GetMusicBandByMusicianIdQuery(int musicianId)
+        {
+            return GetAllMusiciansQuery().Where(m => m.MusicianId == musicianId);
+        }
     }
 }
