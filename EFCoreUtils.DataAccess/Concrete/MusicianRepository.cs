@@ -29,14 +29,23 @@ namespace EFCoreUtils.DataAccess.Concrete
 
         public async Task<Musician> CreateMusician(Musician musician)
         {
-            _context.Musicians.Add(musician);
+            //_context.Musicians.Add(musician);
+
+            //State
+            _context.Entry(musician).State = EntityState.Added;
+
             await _context.SaveChangesAsync();
             return musician;
         }
 
         public async Task<Musician> UpdateMusician(Musician musician)
         {
-            _context.Musicians.Update(musician);
+            //_context.Musicians.Update(musician);
+
+            //State
+            _context.Musicians.Attach(musician);
+            _context.Entry(musician).State = EntityState.Modified;
+
             await _context.SaveChangesAsync();
             return musician;
         }
