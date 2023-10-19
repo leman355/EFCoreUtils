@@ -31,6 +31,11 @@ namespace EFCoreUtils.DataAccess.Concrete
         public async Task<MusicBand> CreateMusicBand(MusicBand musicBand)
         {
             _context.MusicBands.Add(musicBand);
+
+            //Change Tracking
+            //_context.ChangeTracker.DetectChanges();
+            //Console.WriteLine(_context.ChangeTracker.DebugView.LongView);
+
             await _context.SaveChangesAsync();
             return musicBand;
         }
