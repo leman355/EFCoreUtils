@@ -3,6 +3,7 @@ using EFCoreUtils.Business.Abstract;
 using EFCoreUtils.Business.DTO.MusicianDtos;
 using EFCoreUtils.DataAccess.Abstract;
 using EFCoreUtils.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreUtils.Business.Concrete
 {
