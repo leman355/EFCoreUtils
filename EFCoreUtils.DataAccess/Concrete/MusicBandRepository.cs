@@ -19,6 +19,7 @@ namespace EFCoreUtils.DataAccess.Concrete
             return await _context.MusicBands
                 .Include(m => m.Musicians)
                 .IgnoreQueryFilters()
+                .OrderBy(band => band.Name)  //Sorting
                 .ToListAsync();
         }
 
